@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Neighbourhood</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="secondary">
+            <div class="secondary-input">
+                <h1>
+                    <span class="icon-menu" id="toggle"></span>
+                    Neighborhood Map
+                </h1>
+                <input type="text" data-bind="value: search_input, valueUpdate: 'keyup'" placeholder="filter the markerrs">
+            </div>
+
+            <ul class="locations-list" id="nav" data-bind="foreach:  filtered_markers">
+                <li class="location-item" data-bind="text: $data.title, click: $parent.show_infowindow">
+                </li>
+            </ul>
+        </div>
+
+        <div class="main" id="map">
+
+        </div>
+
+    </div>
+
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/knockout/dist/knockout.js"></script>
+    <script src="js/app.js"></script>
+
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqm6Z8Pi5uPbPdpPSjHsd6xfWikRy4c2Q&callback=run"
+     type="text/javascript" onerror="mapsError()"></script>
+</body>
+
+</html>

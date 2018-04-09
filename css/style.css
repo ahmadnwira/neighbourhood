@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* UI */
+
+input {
+    height: 2em;
+    border-radius: 3px;
+    padding: 5px;
+    width: 80%;
+}
+
+/* base layout */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondary {
+    background: indigo;
+    color: #fff;
+    flex-direction: column;
+    font-size: .8em;
+    flex: 1;
+    text-align: center;
+}
+
+.main {
+    height: 100%;
+    flex: 3;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+.locations-list {
+    list-style: none;
+    padding: 0;
+    width: 85%;
+    margin: 1rem auto;
+}
+
+.location-item {
+    text-transform: uppercase;
+    padding: .5rem 0rem;
+    margin-bottom: .2rem;
+    background: #fff;
+    color: #3f3481;
+    border-radius: 5px;
+}
+
+/* larger-screens */
+
+@media only screen and (min-width: 750px) and (min-height:400px){
+    #toggle {
+        display: none;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .location-item {
+        padding: 0em;
+    }
+    .secondary {
+        display: flex;
+        flex: 1;
+    }
+    .container {
+        flex-direction: row;
+    }
+    .locations-list {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        padding: 0;
+        justify-content: space-between;
+    }
+    .location-item {
+        font-size: 1.5em;
+        color: #fff;
+        margin-bottom: .8em;
+        background: transparent;
+    }
+    .location-item:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
